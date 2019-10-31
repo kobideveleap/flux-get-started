@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: echo
+data:
+  default.yaml: |
+    port: {{ .Values.config.port }}
+    loglevel: {{ .Values.config.port }}
+    persist: {{ .Values.config.port }}
+    mongodburl: "mongodb://{{ .Values.mongodb.username }}:{{ .Values.mongodb.password }}@mongodb.default.svc.cluster.local/{{ .Values.mongodb.database }}"
